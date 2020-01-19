@@ -1,0 +1,15 @@
+# to create create isers and passwordless sudo access
+- import_playbook: initial.yml
+
+#- import_playbook: ./docker-ansible/docker-playbook.yml
+
+# Install docker and kubernetes req:
+- import_playbook: ./kube-cluster/kube-dependencies.yml
+- import_playbook: ./kube-cluster/master.yml
+- import_playbook: ./kube-cluster/workers.yml
+
+# installing apps jdk8, docker-compose, tree , (you can add more accordingly)
+- import_playbook: install-apps.yml
+
+- import_playbook: commands.yml
+- import_playbook: commands2.yml

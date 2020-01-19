@@ -1,0 +1,17 @@
+[masters]
+master00 ansible_host=54.90.103.200 ansible_user=ubuntu
+
+#if you want to use your .pem then write like this with all nodes here
+#master00 ansible_host=54.90.103.200 ansible_user=ubuntu ansible_ssh_private_key_file="./your-directory/SamAWS.pem"
+
+[workers]
+worker00 ansible_host=54.152.143.82 ansible_user=ubuntu
+worker01 ansible_host=18.208.221.139 ansible_user=ubuntu
+
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+#[all_servers:vars]
+
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
